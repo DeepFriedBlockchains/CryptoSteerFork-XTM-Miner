@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "lockedAtUtc": "2026-08-05T05:30:00Z",
+  "application": {
+    "applicationId": "com.thecryptosteer.xmrminer",
+    "versionCode": 20201,
+    "versionName": "2.2.1"
+  },
+  "android": {
+    "compileSdk": 37,
+    "targetSdk": 37,
+    "minSdk": 36,
+    "buildTools": "37.0.0",
+    "ndk": "29.0.14206865",
+    "cmake": "3.22.1",
+    "abi": "arm64-v8a",
+    "pageAlignmentBytes": 16384
+  },
+  "build": {
+    "androidGradlePlugin": "9.3.0",
+    "gradle": "9.5.0",
+    "kotlin": "2.4.10",
+    "java": "17",
+    "composeBom": "2026.06.00",
+    "androidxCore": "1.19.0",
+    "androidxActivity": "1.13.0",
+    "androidxLifecycle": "2.11.0",
+    "androidxNavigation": "2.9.8",
+    "androidxDataStore": "1.2.1",
+    "staticAnalysis": "Android Lint + compiler warnings + build-logic/source_quality_check.py",
+    "androidxBiometric": "1.4.0-alpha04",
+    "androidxFragment": "1.8.9",
+    "okHttp": "5.1.0"
+  },
+  "native": [
+    {
+      "name": "RandomX",
+      "version": "2.0.1",
+      "repository": "https://github.com/tevador/RandomX.git",
+      "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "libuv",
+      "version": "1.52.1",
+      "repository": "https://github.com/libuv/libuv.git",
+      "commit": "1cfa32ff59c076ffb6ed735bbc8c18361558661f",
+      "license": "MIT"
+    },
+    {
+      "name": "hwloc",
+      "version": "2.14.0",
+      "repository": "https://github.com/open-mpi/hwloc.git",
+      "commit": "b5660dff631a171a96a4b3abf5a170c9cf62d6ef",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "OpenSSL",
+      "version": "3.5.7",
+      "repository": "https://github.com/openssl/openssl.git",
+      "commit": "8cf17aaeb4599f8af87fefd810b5b5fee90fe69e",
+      "license": "Apache-2.0"
+    }
+  ],
+  "donation": {
+    "basisPoints": 200,
+    "wallet": "44VNzHZAE1HK3NQZRPeDkMQ8pjDzivtq2eAE4iZLuLaSLZiu3wmCswrCUEm7NnWGMUB4k6cK7p7S7EXfJU7FbVTUMczHdSE",
+    "poolHost": "gulf.moneroocean.stream",
+    "poolPort": 10128,
+    "tlsRequired": false,
+    "remoteOverride": false,
+    "workerPrefix": "CryptoSteer",
+    "reducedBasisPoints": 100,
+    "reductionThresholdActiveMiningNanos": 2592000000000000,
+    "accountTierSource": "authenticated CryptoSteer control service"
+  }
+}

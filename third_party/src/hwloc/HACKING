@@ -1,0 +1,144 @@
+-*- text -*-
+
+Notes to developers:
+
+- Note that the README file is automatically generated from the main
+  page of the doxygen documentation by running "make doc" (or "make
+  readme").
+
+- To check that all the code is working:
+
+  make check
+  make distcheck
+  make check with --enable-debug
+
+  Do this both from inside and outside sources.
+
+- The following tools are necessary to generate all documentation (any
+  flavor of "make dist" will fail if these tools are not available):
+
+  - doxygen with man, pdf and html support
+  - a latex distribution with pdflatex, and the usually recommended
+    package files (such as float.sty) and fonts (such as ptmr8t)
+  - fig2dev (transfig package)
+  - gs (ghostscript package)
+  - epstopdf
+  - w3m or lynx (to generate the README)
+
+  On Debian systems, the following packages should be enough:
+    doxygen ghostscript texlive-latex-base texlive-latex-recommended
+    texlive-fonts-recommended texlive-font-utils transfig w3m
+  On RedHat systems:
+    ghostscript doxygen transfig tetex tetex-latex w3m
+
+- *** BEFORE MAKING AN OFFICIAL RELEASE TARBALL: the release manager
+  MUST update the VERSION file:
+
+  - ensure that the major, minor, and release version numbers are
+    correct.  The greek/svn numbers will automatically be stripped by
+    make_dist_tarball (see below).
+  - ensure that increment the so_version number as appropriate (see
+    the GNU Libtool documentation for a description of what to do).
+
+- Create a distribution tarball by running the following from the
+  top-level source directory:
+
+  shell$ ./contrib/dist/make_dist_tarball
+
+  It will take a few minutes because it runs "make distcheck" and it
+  builds two tarballs (an official release and a greek release).  For
+  example, after "make_dist_tarball" completes, you'll have two
+  tarballs, like this:
+
+  hwloc-0.9.1.tar.gz
+  hwloc-0.9.1rc1.tar.gz
+
+  The "rc1" tarball (or whatever the greek version is) can be
+  distributed for testing and validation.  If it passes, then the
+  non-rc1 tarball can be released (it's identical to the rc1 tarball
+  except for its version).
+
+- Check tarballs by configuring and building them and then running
+  "make check".
+
+- make maintainer-clean can be used to properly remove the generated
+  documentations.
+
+- Silent rules are used by default to reduce the build verbosity:
+
+  shell$ make
+  CC	src/topology.lo
+
+  To revert to the old verbose rules, pass V=1 to make:
+
+  shell$ make V=1
+  /bin/sh ../libtool  --tag=CC   --mode=compile gcc [...] -c -o topology.lo topology.c
+
+
+
+
+Building on Windows
+
+- hwloc may be built natively on Windows using CMake (see contrib/windows-cmake/)
+  or a MSVC solution (see contrib/windows/).
+
+- Otherwise, hwloc's usual Autotools build system supports Cygwin as well as
+  MinGW (used below for building official zipballs for Windows releases).
+
+
+Building the Windows zipballs on Windows with MinGW:
+
+- Based on the install of a hwloc Windows CI machine in 2020.
+
+- See also job-3-mingw.bat and job-3-mingw.sh for in contrib/ci.inria.fr/
+  for details on how the hwloc CI runs on such a platform.
+
+- Install prerequisites:
+  - MSYS2 from https://www.msys2.org/
+  - Run a MSYS2 terminal and install MinGW compilers and some tools:
+    $ pacman -Suy
+    $ pacman -S tar zip coreutils diffutils findutils make mingw-w64-i686-gcc mingw-w64-x86_64-gcc
+  - Visual Studio (e.g. 2019 Community Edition)
+    During installation, make sure you activate
+    - C++ Desktop Development,
+    - Windows 10 SDK (or more recent)
+    - x64/x86 Build Tools (e.g. version v142),
+    - C++ Modules for Build Tools (e.g. v142),
+    - C++/CLI for Build Tools (e.g. v142),
+    - C++ Clang and CMake tools (not needed for MinGW-only builds).
+
+- Start a 64bits build msys2 terminal with
+  > C:\msys64\usr\bin\env MSYSTEM=MINGW32 HOME=%cd% /usr/bin/bash -li
+- or 32bits with
+  > C:\msys64\usr\bin\env MSYSTEM=MINGW64 HOME=%cd% /usr/bin/bash -li
+
+- Configuration of the MSYS2 terminal environment:
+  - Your path must contain:
+    - The MSYS bin directories (for MinGW gcc, etc)
+      - For instance /mingw64/bin/ for 64bits build, /mingw32/bin/ for 32bits.
+    - The directory of the some MSVC command-line tools such as "lib.exe", "cl.exe", etc
+      - For instance, for 64bits build: "/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/"
+      - and for 32bits build: "/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx86/x86/"
+  - Check that running "lib", "link" and "cl" finds the right tools (installed by Visual Studio)
+    and displays their usage output (list of command-line options).
+
+- Download a hwloc tarball
+  (don't use GIT unless you want to install autotools, doxygen, LaTeX, etc on Windows),
+  extract it and enter the directory.
+
+- Set the install prefix to what the zipball name must be:
+  $ prefix=$PWD/hwloc-win<size>-build-<version>
+- Configure
+  $ ./configure --prefix=$prefix --enable-static CC="gcc -static-libgcc"
+- Build
+  $ make
+- If not building a 64bits zipball on a 32bits machine, test things:
+  $ make check
+
+- Install
+  $ make install
+- Create the zipball
+  $ zip -r hwloc-win<size>-build-<version>.zip hwloc-win<size>-build-<version>
+
+- Compare the contents of the new zipball with a previous one.
+  Make sure the .lib file was generated.

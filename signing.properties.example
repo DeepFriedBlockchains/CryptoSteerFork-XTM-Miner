@@ -1,0 +1,8 @@
+
+# Copy this file outside the repository and replace every value.
+# Never commit the completed file or the keystore.
+
+storeFile=/absolute/path/to/release-keystore.jks
+storePassword=replace-with-keystore-password
+keyAlias=replace-with-key-alias
+keyPassword=replace-with-key-password

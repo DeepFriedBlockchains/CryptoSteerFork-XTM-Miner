@@ -1,0 +1,8 @@
+{
+  "afterSha256": "5ac268ebfc52a77fcb2ed2227d77eed8fb5d0c1f29be2e6f6890a96128cd5c9d",
+  "beforeSha256": "f31e68e4325bb5be41eaeaf63975bf760ff158be80f0ce800e43497e9d9f693f",
+  "file": "src/jit_compiler_a64_static.S",
+  "marker": ".Lcryptosteer_randomx_program_aarch64_main_loop",
+  "purpose": "Resolve the ARM64 RandomX hot-loop conditional branch locally for Android shared-library links.",
+  "schema": 1
+}

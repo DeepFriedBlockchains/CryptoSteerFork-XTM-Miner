@@ -1,0 +1,34 @@
+Categories:
+  - Internet
+License: Apache-2.0
+AuthorName: THE CRYPTO STEER LLC
+AuthorEmail: dev@thecryptosteer.com
+AuthorWebSite: https://thecryptosteer.com
+WebSite: https://thecryptosteer.com
+SourceCode: https://github.com/Crypto-Steer-LLC/CryptoSteer-XMR-Miner
+IssueTracker: https://github.com/Crypto-Steer-LLC/CryptoSteer-XMR-Miner/issues
+Changelog: https://github.com/Crypto-Steer-LLC/CryptoSteer-XMR-Miner/blob/main/CHANGELOG.md
+AutoName: CryptoSteer XMR Miner
+RepoType: git
+Repo: https://github.com/Crypto-Steer-LLC/CryptoSteer-XMR-Miner
+Builds:
+  - versionName: '2.2.1'
+    versionCode: 20201
+    commit: v2.2.1
+    subdir: .
+    timeout: 7200
+    sudo:
+      - apt-get update
+      - apt-get install -y autoconf automake libtool pkg-config perl python3 ninja-build cmake
+    ndk: 29.0.14206865
+    prebuild:
+      - test -x "$$SDK$$/cmake/3.22.1/bin/cmake"
+      - test -x "$$SDK$$/cmake/3.22.1/bin/ninja"
+    build:
+      - CRYPTOSTEER_CMAKE_BIN="$$SDK$$/cmake/3.22.1/bin/cmake" CRYPTOSTEER_NINJA_BIN="$$SDK$$/cmake/3.22.1/bin/ninja" ./scripts/build-native-dependencies.sh
+      - ./gradlew --no-daemon --no-configuration-cache :app:testDebugUnitTest :app:lintFdroid :app:assembleFdroid
+    output: app/build/outputs/apk/fdroid/*.apk
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: '2.2.1'
+CurrentVersionCode: 20201

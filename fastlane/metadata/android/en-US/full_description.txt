@@ -1,0 +1,7 @@
+CryptoSteer XMR Miner runs a native RandomX mining engine against pools selected by the user. Mining is always user initiated and remains visible through an Android foreground-service notification.
+
+Features include pool profiles and failover, TLS pool connections, live hashrate history, thermal and battery safeguards, tuning profiles, benchmark tools, encrypted pool credentials, and optional account-based remote rig control.
+
+The disclosed developer contribution starts at 2% of active mining time and becomes 1% after 30 cumulative days for signed-in accounts. The F-Droid build does not contain the private APK updater and does not send anonymous installation or mining telemetry.
+
+Mining places sustained load on the processor and can increase heat, power use, and battery wear. Use only devices you own or are authorized to operate.

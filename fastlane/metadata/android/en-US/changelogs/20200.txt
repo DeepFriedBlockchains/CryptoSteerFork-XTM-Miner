@@ -1,0 +1,1 @@
+Final THE CRYPTO STEER LLC branding and launcher artwork. Added an F-Droid-specific build without the private APK updater or anonymous installation/mining telemetry. Added reproducible source publication and F-Droid submission tooling.

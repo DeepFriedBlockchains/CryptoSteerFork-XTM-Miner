@@ -1,0 +1,1 @@
+Fixed the Android foreground-service notification icon resource, preserved the exact supplied master logo in the public source, and regenerated launcher/store artwork with full-artwork safe padding.

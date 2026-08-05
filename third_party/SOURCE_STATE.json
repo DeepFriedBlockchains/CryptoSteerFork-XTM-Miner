@@ -1,0 +1,10 @@
+{
+  "generatedAtUtc": "2026-08-05T00:00:00Z",
+  "commits": {
+    "RandomX": "aaafe71322df6602c21a5c72937ac284724ae561",
+    "libuv": "1cfa32ff59c076ffb6ed735bbc8c18361558661f",
+    "hwloc": "b5660dff631a171a96a4b3abf5a170c9cf62d6ef",
+    "OpenSSL": "8cf17aaeb4599f8af87fefd810b5b5fee90fe69e"
+  },
+  "format": "vendored-source-without-vcs-history"
+}

@@ -1,0 +1,26 @@
+
+* [x] The app complies with the F-Droid inclusion policy.
+* [x] The repository contains the complete current source and free-software licenses.
+* [x] THE CRYPTO STEER LLC maintains the application and supports inclusion.
+
+### Source code
+
+https://github.com/Crypto-Steer-LLC/CryptoSteer-XMR-Miner
+
+### License
+
+Apache-2.0
+
+### Category
+
+Internet
+
+### Summary
+
+Native, user-controlled RandomX Monero miner for Android.
+
+### Description
+
+CryptoSteer XMR Miner is a native Android RandomX miner published by THE CRYPTO STEER LLC. Mining is started by the user and remains visible through a foreground-service notification. The application supports user-selected pools, TLS, pool profiles, live statistics, device safeguards, benchmarking, tuning, and optional account-based remote-rig controls.
+
+The F-Droid build removes the APK installation permission and update receiver, disables the private updater, and disables anonymous installation and mining telemetry at compile time. Native dependencies are pinned and published as source. The application discloses a developer contribution of 2% of active mining time, reduced to 1% after the documented threshold.
