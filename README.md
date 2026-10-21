@@ -1,11 +1,12 @@
-
+FIRST, WE ARE NOT AFFILIATED WITH MONERO, TARI PROJECT, OR CRYPTOSTEER LLC. THIS IS AN EXPERIMENTIAL MOBILE MINER PROJECT USING OTHER GREAT WORKS TO CONTINUE EXPANDING ON OTHERS GREAT IDEAS. 
+THANKS TO XMR, XTM, XMRIG, & THE ORIGINAL BUILDERS (CryptoSteer LLC) FOR ALL THE TIME, EFFORT AND WORK THEY PUT INTO THEIR ORIGINAL PROJECT SOURCECODE AND BUILD. THEIR SUCCESS & ACHIEVEMENTS WITH ITS ORIGINAL BUILD HELPED PAVE THE WAY TO SPEED UP OUR PROJECT WORK AND MADE THE PROJECT FORK MUCH EASIER TO EXPAND ON. THANKS AGAIN CRYPTOSTEER! 
 # CryptoSteer XMR Miner
 
 <p align="center">
   <img src="branding/cryptosteer-xmr-miner-logo.png" alt="CryptoSteer XMR Miner" width="520">
 </p>
 
-CryptoSteer XMR Miner is a native Android RandomX miner published by **THE CRYPTO STEER LLC**. Mining starts only when the user requests it and remains visible through an Android foreground-service notification.
+XTM Miner is an NFProject fork of CryptoSteer XMR Miner. A native Android RandomX miner published by **THE CRYPTO STEER LLC**. Mining starts only when the user requests it and remains visible through an Android foreground-service notification.
 
 Use the application only on devices that you own or are authorized to operate. Sustained mining creates heat, increases power use, and can accelerate battery and hardware wear.
 
