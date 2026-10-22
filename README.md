@@ -20,7 +20,7 @@ Use the application only on devices that you own or are authorized to operate. S
 - Eco, Balanced, Performance, Max, and custom operating profiles
 - Benchmarking, calibration, temperature monitoring, and thermal safeguards
 - Optional account and remote-rig controls
-- Visible developer contribution: 2% of active mining time, reduced to 1% after the documented threshold
+- The Orignal 2% Developer tax set by C.S removed.
 
 ## Build variants
 
