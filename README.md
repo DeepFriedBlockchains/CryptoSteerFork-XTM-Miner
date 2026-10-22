@@ -10,13 +10,16 @@ NFP XTM-MINER is an independent fork adapting the CryptoSteer Android mining app
 
 ## Development preview
 
-### Mining Dashboard
-
-![XTM-MINER Dashboard](docs/screenshots/xtm-dashboard.png)
-
-### More / Tools
-
-![XTM-MINER More Menu](docs/screenshots/xtm-more-menu.png)
+<table>
+  <tr>
+    <th align="center">Mining Dashboard</th>
+    <th align="center">More / Tools</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/xtm-dashboard.png" alt="XTM-MINER mining dashboard preview" width="370"></td>
+    <td align="center"><img src="docs/screenshots/xtm-more-menu.png" alt="XTM-MINER More and Tools screen preview" width="370"></td>
+  </tr>
+</table>
 
 The interface is a development preview; appearance and functionality may change.
 
